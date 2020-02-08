@@ -1,6 +1,6 @@
 #! /usr/share/rvm/rubies/ruby-2.7.0/bin/ruby
 # The above line should be modified for you. use the terminal command which ruby to find your filepath
-default_address = "yandex.com"
+default_address = "http://127.0.0.1:5500/" # change this as convenient
 address = ARGV.empty? ? default_address : ARGV[0]
 
 browsers = [
