@@ -1,27 +1,24 @@
-address = "lemonparty.com" # change this to adjust it for you
+address = "yandex.com" # change this to adjust it for you
 
 browsers = [
   "firefox",
   "chromium",
   "google-chrome"
+  # edit this array as you like. Make sure that any browsers you choose take the same command format cmmd --new-window <URL> or modify the code below
 ]
 
 begin
   new_desktop = `wmctrl -d`[/[0-9]  \*/][0].to_i + 1
-  `wmctrl -s #{new_desktop}` # this might not work for fourth desktops or greater - but maybe it will if lower desktops already exist??
-  sleep 1
-  command = browsers.map { |b| b + " \"#{address}\""}.join(" & ")
-  `#{command}`
+  `wmctrl -s #{new_desktop}` 
+  # sleep 1 #re-enable if browsers sometimes open in old desktop not new one
+  `#{browsers.map { |b| b + " --new-window" + " \"#{address}\"" + " & "}.join("")}`
+  # `#{command}`
 rescue
-  puts "you need to install a dependency, wmctrl, e.g. on Ubuntu"
+  puts "The launcher encountered an error. It is likely that you need to install the dependency, wmctrl, e.g. on Ubuntu"
   puts
   puts "\tsudo apt-get install wmctrl" 
   puts
 end
-
-# The state of play: this works if the browsers are not open, if they are open it doesn't open new windows in new desktops, but rather new tabs
-# sometimes exceptions are thrown for reasons other than lacking wmctrl, e.g. the wrong browser command
-## firefox --new-window URL
 
 
 # TODO: add argv support for non-default page
