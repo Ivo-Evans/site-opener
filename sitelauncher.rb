@@ -1,4 +1,5 @@
-address = "yandex.com" # change this to adjust it for you
+default_address = "yandex.com"
+address = ARGV.empty? ? default_address : ARGV[0]
 
 browsers = [
   "firefox",
@@ -21,4 +22,23 @@ rescue
 end
 
 
-# TODO: add argv support for non-default page
+# Instructions 
+
+# run to open same website in multiple browsers in a single workspace
+# switch between workspaces with ctrl-alt-arrow
+# must have wmctrl installed
+# will open the default address by default, but if you include an address when you invoke the program it will use that instead. I have configured the default address to my normal localhost for vscode live server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
