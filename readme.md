@@ -1,6 +1,6 @@
-This is a program to open a webpage in multiple browsers in a new desktop, so that you may check your site's cross-browser compatibility. You must have Ruby and wmctrl installed and, of course, you must be using Bash. 
+This is a program to open a webpage in multiple browsers in a new desktop, so that you may check your site's cross-browser compatibility. You must have Ruby and wmctrl installed and you must be using Linux. 
 
-It works 'straight out of the box', but you should install it by adding it to your $PATH so that you can execute it from any location.
+It works straight out of the box, but you should install it by adding it to your $PATH so that you can execute it from any location.
 
 Workspaces can be switched between with ctrl-alt-arrow
 
